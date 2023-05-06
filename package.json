@@ -1,0 +1,16 @@
+{
+  "name": "starrail-daily",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/lonelil/starrail-daily.git",
+  "author": "lonelil <51315646+lonelil@users.noreply.github.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.1.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "dotenv": "^16.0.3"
+  }
+}

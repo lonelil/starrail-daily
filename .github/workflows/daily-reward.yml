@@ -1,0 +1,34 @@
+name: Daily Reward Check In
+
+on:
+  schedule:
+    - cron: "10 0 * * *"
+
+  workflow_dispatch:
+
+env:
+  HOYO_COOKIES: ${{ secrets.HOYO_COOKIES }}
+
+jobs:
+  checkIn:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "yarn"
+
+      - name: Setup
+        run: |
+          yarn install
+          yarn build
+
+      - name: Run Bot
+        run: node dist/daily.js
