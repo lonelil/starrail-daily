@@ -5,6 +5,9 @@
   "repository": "https://github.com/lonelil/starrail-daily.git",
   "author": "lonelil <51315646+lonelil@users.noreply.github.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "tsc --build"
+  },
   "devDependencies": {
     "@types/node": "^20.1.0",
     "typescript": "^5.0.4"
